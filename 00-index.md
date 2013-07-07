@@ -1,7 +1,8 @@
 ---
 layout: page
-title: Hello World!
+title: Away Tools
 tagline: Supporting tagline
+permalink: "index.html"
 ---
 {% include JB/setup %}
 
