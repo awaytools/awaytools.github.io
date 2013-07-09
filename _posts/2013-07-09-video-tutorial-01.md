@@ -1,8 +1,9 @@
 ---
 layout: post
-category : lessons
-tagline: "Supporting tagline"
-tags : [intro, beginner, jekyll, tutorial]
+category : AwayBuilder
+summary: "A first look at how to import assets, apply shading and lighting effects, and publish in Away3D"
+tags : [Beginner, Tutorial]
+image : placeholder.gif
 ---
 {% include JB/setup %}
 

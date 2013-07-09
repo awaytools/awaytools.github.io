@@ -3,9 +3,9 @@ layout: page
 title : AWD format
 header : Post Archive
 group: navigation
-permalink: "awdformat.html"
+permalink: "awdformat/"
 ---
 {% include JB/setup %}
 
-{% assign posts_collate = site.posts %}
+{% assign posts_collate = site.categories.awdformat %}
 {% include JB/posts_collate %}

@@ -7,6 +7,6 @@ permalink: "awaybuilder/"
 ---
 {% include JB/setup %}
 
-{% assign posts_collate = site.posts %}
+{% assign posts_collate = site.categories.awaybuilder %}
 {% include JB/posts_collate %}
 
