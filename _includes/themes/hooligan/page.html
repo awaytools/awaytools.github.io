@@ -1,6 +1,10 @@
 <div class="page-header-wrapper">
 	<div class="page-header">
+        {% if page.prettygroup != null %}
+        <h1><span style="color:#bbb">{{page.prettygroup}}:</span> {{ page.title }} {% if page.tagline %}</h1><h1><small>{{ page.tagline }}</small></h1>{% endif %}
+		{% else %}
   		<h1>{{ page.title }} {% if page.tagline %}</h1><h1><small>{{ page.tagline }}</small></h1>{% endif %}
+        {% endif %}
   	</div>
 </div>
 

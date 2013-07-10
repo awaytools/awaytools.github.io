@@ -2,9 +2,9 @@
 title : About
 layout: page
 header : Post Archive
-group: AwayBuilder
-prettygroup: Away Builder
-category : AwayBuilder
+group: AwayExtensions
+prettygroup: Away Extensions
+category : AwayExtensions
 permalink: "about/"
 ---
 {% include JB/setup %}

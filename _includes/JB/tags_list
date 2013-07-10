@@ -22,11 +22,19 @@ Usage:
 {% else %}
   {% if tags_list.first[0] == null %}
     {% for tag in tags_list %} 
+      {% if tag == page.tag %}
+        <li class="active"><a href="/tags/{{ tag }}" class="active">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
+      {% else %}
     	<li><a href="/tags/{{ tag }}">{{ tag }} <span>{{ site.tags[tag].size }}</span></a></li>
+      {% endif %}
     {% endfor %}
   {% else %}
     {% for tag in tags_list %} 
+      {% if tag[0] == page.tag %}
+        <li class="active"><a href="/tags/{{ tag[0] }}" class="active">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
+      {% else %}
     	<li><a href="/tags/{{ tag[0] }}">{{ tag[0] }} <span>{{ tag[1].size }}</span></a></li>
+      {% endif %}
     {% endfor %}
   {% endif %}
 {% endif %}
