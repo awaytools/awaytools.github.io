@@ -42,6 +42,15 @@
       </span>
     </section>
     </br>
+	<section>
+      <h3>Pages</h3>
+      <ul class="tag_box">
+        {% assign pages_list = site.pages %}
+        {% assign group = page.category %}
+        {% include JB/pages_list %}
+      </ul>
+    </section>
+    </br>
     {% endif %}     
     {% unless page.tags == empty %}
     <section>
