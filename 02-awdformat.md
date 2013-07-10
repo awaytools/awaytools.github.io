@@ -1,7 +1,7 @@
 ---
 layout: page
 title : AWD Format
-tagline : An optimised binary format for online 3D assets, storing all aspects of a 3D scene for easy retrieval. The format is based on the data structures available in Away3D, and is designed to be light-weight, compact, fast and extensible. The internal structure of the format can be viewed via the latest <a href="https://github.com/awaytools/awd-sdk/blob/master/docs/AWD_format_specification2_1_Alpha.pdf?raw=true">AWD specification</a> doc.
+tagline : <p>An optimised binary format for online 3D assets, storing all aspects of a 3D scene for easy retrieval. The format is based on the data structures available in Away3D, and is designed to be light-weight, compact, fast and extensible. The internal structure of the format can be viewed via the latest <a href="https://github.com/awaytools/awd-sdk/blob/master/docs/AWD_format_specification2_1_Alpha.pdf?raw=true">AWD specification</a> doc.</p>
 header : Post Archive
 group: navigation
 permalink: "awdformat/"
