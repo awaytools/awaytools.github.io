@@ -7,10 +7,16 @@ image : placeholder.gif
 ---
 {% include JB/setup %}
 
+<div class="row">
+	<div class="span10" style="position: relative;padding-bottom: 58%;display: block;">
+		<iframe style="position: absolute;margin: 0;" src="http://player.vimeo.com/video/69931614?title=0&amp;byline=0&amp;portrait=0" width="100%" height="100%" frameborder="0" webkitAllowFullScreen="true" mozallowfullscreen="true" allowFullScreen="true"> </iframe>
+	</div>
+</div>
+<p></p>
 This Jekyll introduction will outline specifically  what Jekyll is and why you would want to use it.
 Directly following the intro we'll learn exactly _how_ Jekyll does what it does.
 
-## Overview 
+## Test 
 
 ### What is Jekyll?
 
