@@ -30,13 +30,13 @@
   
   <div class="span2">
     <section>
-      <h4>Published</h4>
+      <h3>Published</h3>
       <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
     </section>
     </br>
     {% if page.category %}
     <section>
-      <h4>Category</h4>
+      <h3>Category</h3>
       <span class="category">
         {{ page.category }}
       </span>
@@ -45,7 +45,7 @@
     {% endif %}     
     {% unless page.tags == empty %}
     <section>
-      <h4>Tags</h4>
+      <h3>Tags</h3>
       <ul class="tag_box">
         {% assign tags_list = page.tags %}
         {% include JB/tags_list %}
