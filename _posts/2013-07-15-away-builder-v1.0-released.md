@@ -27,7 +27,7 @@ _ Mousewheel interaction will be disabled on some browsers (we are looking at fi
 
 ## Demo
 
-![Away Builder 1.0](/assets/img/awaybuilder_sponza_970.jpg)
+![Away Builder 1.0]({{ page.url }}/awaybuilder_sponza_970.jpg)
 
 As a first example for those of you keen on getting stuck in, we thought we'd give you something familiar. The Crytek Sponza model featured back in the Away3D 4.1 Alpha release looked fantastic in Multi-pass material glory, but anyone looking at the code could see all that loveliness came at a fairly high coding preparation cost.
 
