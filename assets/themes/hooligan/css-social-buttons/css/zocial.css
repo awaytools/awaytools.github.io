@@ -129,6 +129,7 @@ a.zocial {
 .zocial.bitcoin,
 .zocial.cloudapp,
 .zocial.dropbox,
+.zocial.install,
 .zocial.email,
 .zocial.eventful,
 .zocial.github,
@@ -159,6 +160,7 @@ a.zocial {
 .zocial.bitcoin:focus,
 .zocial.bitcoin:hover,
 .zocial.dropbox:focus,
+.zocial.install:focus,
 .zocial.dropbox:hover,
 .zocial.email:focus,
 .zocial.email:hover,
@@ -203,6 +205,7 @@ a.zocial {
 
 .zocial.bitcoin:active,
 .zocial.dropbox:active,
+.zocial.install:active,
 .zocial.email:active,
 .zocial.eventful:active,
 .zocial.github:active,
@@ -246,6 +249,7 @@ a.zocial {
 .zocial.disqus:before {content: "\E030";}
 .zocial.dribbble:before {content: "\E023";}
 .zocial.dropbox:before {content: "\E043"; color: #1f75cc;}
+.zocial.install:before {content: "\E043"; color: #000000;}
 .zocial.email:before {content: "\E03C"; color: #312c2a;}
 .zocial.eventasaurus:before {content: "\E055"; color: #9de428;}
 .zocial.eventbrite:before {content: "\E05B";}
@@ -261,6 +265,7 @@ a.zocial {
 .zocial.gmail:before {content: "\E04C"; color: #f00;}
 .zocial.google:before {content: "\E026";}
 .zocial.googleplay:before {content: "\E05E";}
+.zocial.livetool:before {content: "\E05E";}
 .zocial.googleplus:before {content: "\E00A";}
 .zocial.gowalla:before {content: "\E01F";}
 .zocial.grooveshark:before {content: "\E017";}
@@ -332,6 +337,7 @@ a.zocial {
 .zocial.disqus {background-color: #5d8aad;}
 .zocial.dribbble {background-color: #ea4c89;}
 .zocial.dropbox {background-color: #fff; color: #312c2a;}
+.zocial.install {background-color: #fff; color: #000000;}
 .zocial.email {background-color: #f0f0eb; color: #312c2a;}
 .zocial.eventasaurus {background-color: #192931; color: #fff;}
 .zocial.eventbrite {background-color: #ff5616;}
@@ -347,6 +353,7 @@ a.zocial {
 .zocial.gmail {background-color: #efefef; color: #222;}
 .zocial.google {background-color: #4e6cf7;}
 .zocial.googleplay {background-color: #000;}
+.zocial.livetool {background-color: #dd9900;}
 .zocial.googleplus {background-color: #dd4b39;}
 .zocial.gowalla {background-color: #ff720a;}
 .zocial.grooveshark {background-color: #111; color:#eee;}

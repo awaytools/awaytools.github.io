@@ -30,6 +30,15 @@
     {{ content }}
   </div>
   <div class="span2">
+    {% if site.links[page.category] %}
+      <section>
+        <h3>Links</h3>
+        <ul class="link_box">
+          {% assign links_list = site.links[page.category] %}
+          {% include JB/links_list %}
+        </ul>
+      </section>
+    {% endif %}
     {% if page.category %}
     <section>
       <h3>Pages</h3>
@@ -40,7 +49,6 @@
       </ul>
     </section>
     {% endif %}
-    <section>
     {% unless site.tags == empty %}
       <section>
         <h3>Tags</h3>

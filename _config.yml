@@ -19,6 +19,40 @@ author :
   twitter : awaytools
   facebook : awaytools
 
+
+# Links defined for pages
+# Appear in in the right-side nav at teh top
+#
+links : 
+    Home :
+      - name : GitHub
+        url : https://github.com/awaytools
+        zocial : github
+      - name : Twitter
+        url : https://twitter.com/awaytools
+        zocial : twitter
+      - name : Facebook
+        url : https://facebook.com/awaytools
+        zocial : facebook
+    AwayBuilder :
+      - name : Github Pages
+        url : https://github.com/awaytools/AwayBuilder
+        zocial : github
+      - name : Source Files
+        url : https://github.com/awaytools/AwayBuilder/archive/master.zip
+        zocial : cloudapp
+      - name : Binary Release
+        zocial : install
+        url : https://github.com/awaytools/AwayBuilder/blob/master/awaybuilder-desktop/bin-release/AwayBuilderApplication.air?raw=true
+      - name : Live Tool
+        url : live-tool/
+        zocial : livetool
+    AWDFormat :
+      - name : Github Pages
+        url : https://github.com/awaytools/awd-sdk
+      - name : Source Files
+        url : https://github.com/awaytools/awd-sdk/archive/master.zip
+  
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
 # Most places will/should use BASE_PATH to make the urls

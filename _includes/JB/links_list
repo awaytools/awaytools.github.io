@@ -1,0 +1,37 @@
+{% comment %}<!--
+The links_list include is a listing helper.
+Usage:
+  1) assign the 'links_list' variable to a valid array of pages or posts.
+  2) include JB/links_list
+  example:
+    <ul>
+  	  {% assign links_list = site.pages %}  
+  	  {% include JB/links_list %}
+  	</ul>
+  	
+  Grouping: (optional): 
+  	assign the 'group' variable to constrain the list to only pages/posts
+  	in the given group. Note you must define the group manually in the page/post
+  	meta-data to use this feature.
+  	Grouping is mainly helpful for non-post pages.
+  	If you want to group posts, it's easier/better to tag them, then pass the tagged posts array.
+  	i.e. site.tags.cool_tag (this returns an array of posts tagged: cool_tag)
+  	
+  This helper can be seen in use at: ../_layouts/default.html
+-->{% endcomment %}
+
+{% if site.JB.links_list.provider == "custom" %}
+  {% include custom/links_list %}
+{% else %}
+  {% for node in links_list %}
+    {% if node.name != null %}
+      {% if node.name == "Live Tool" %}
+        <li><a href="{{node.url}}" class="zocial {{node.zocial}}">{{node.name}}&nbsp;&nbsp;</a></li>
+      {% else %}
+        <li><a href="{{node.url}}"><span class="zocial icon {{node.zocial}}">{{node.name}}</span>{{node.name}}</a></li>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% assign links_list = nil %}
+{% assign group = nil %}

@@ -220,6 +220,18 @@ a.btn.disabled, a.btn.disabled.disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
+/* Links */
+.link_box {
+  list-style: none;
+  margin: 0;
+  padding: 5px 0;
+  overflow: hidden;
+}
+
+.link_box li {
+  line-height: 48px;
+}
+
 /* Tags */
 /* line 196, ../_sass/_base.scss */
 .tag_box {
@@ -278,6 +290,24 @@ div.content div#page-index {
 .navbar a.zocial {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+.navbar .zocial {
+  box-shadow: none !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0px !important;
+  float: none !important;
+  overflow: visible  !important;
+  margin: 0 0.5em 0 0 !important;
+}
+
+.navbar .zocial.icon:before {
+  height: 0em !important;
+}
+
+.link_box .zocial {
+  margin-right: 5px !important;
 }
 
 /* line 254, ../_sass/_base.scss */

@@ -2,8 +2,6 @@
 title : Live Tool
 layout: live_tool
 header : Post Archive
-group: AwayBuilder
-prettygroup: Away Builder
 category : AwayBuilder
 permalink: "live-tool/"
 ---
