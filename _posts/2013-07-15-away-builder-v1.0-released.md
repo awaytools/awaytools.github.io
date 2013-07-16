@@ -15,12 +15,13 @@ You can grab a download of the AIR binary in one the following ways:
 
 - On GitHhub by going to [AwayBuilder releases](https://github.com/awaytools/AwayBuilder/releases).
 - On the Away3D website by going to [https://www.away3d.com/awaybuilder](https://www.away3d.com/awaybuilder).
+- By clicking on the "Binary Release" button in the right-hand nav.
 
 ## Live Tool
 
-If you're the impatient type, you can simple click the live tool link to the right of this text which takes you to a living demo of the current release for you to play with. This version will have several unavoidable disadvantages to the desktop version, namely:
+If you're the impatient type, you can simple click the live tool link in the right-hand nav which takes you to an in-browser version of the current release for you to play with. This version will have several unavoidable disadvantages to the desktop version, namely:
 
-- There is no safety prompt to save your work if you accidentally try to close the window
+- There is no safety prompt to save your work if you accidentally close the window
 - Files import one at a time, and there is no facility for local dependencies to be automatically loaded
 - There is no option to save a file with external textures
 _ Mousewheel interaction will be disabled on some browsers (we are looking at fixing this soon)
@@ -35,4 +36,4 @@ The demo above is fairly easily launched once you have Away Builder running. Sim
 
 ## Further Reading
 
-A new [About](/awaybuilder/about) page has been created going into more detail about the thinking behind Away Builder and the direction we'd like to see it go. Feedback is welcome in the discussion below, or you can take your thoughts to the [Away Builder Forum](http://away3d.com/forum/viewcategory/66/) on the Away3D site.
+A new [About](/awaybuilder/about) page has been created going into more detail about the thinking behind Away Builder. Feedback is welcome in the comments below, or you can write your thoughts in the new [Away Builder Forum](http://away3d.com/forum/viewcategory/66/) available on the Away3D site.
