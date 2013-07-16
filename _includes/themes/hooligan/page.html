@@ -5,7 +5,7 @@
 		  <div class="span3 hidden-phone hidden-tablet">
 		  <img class="titleImage img-rounded" border="0" src="/assets/img/{{ page.image }}" alt="{{ page.title }} image">
 		  </div>
-		  <div class="span9" style="height:256px;">
+		  <div class="span9 hidden-phone hidden-tablet" style="height:256px;">
 		  <div style="display:table;height:256px;">
 		  <div style="display:table-cell;vertical-align:middle;">
 		{% else %}
@@ -13,14 +13,27 @@
 		  <div>
 		  <div>
 		{% endif %}
-        {% if page.prettygroup != null %}
-        <h1><span style="color:#bbb">{{page.prettygroup}}:</span> {{ page.title }} {% if page.tagline %}</h1><h1 style="margin:0px"><small>{{ page.tagline }}</small></h1>{% endif %}
+        {% if site.prettycategory[page.group] != null %}
+        <h1><span style="color:#bbb">{{site.prettycategory[page.group]}}:</span> {{ page.title }} {% if page.tagline %}</h1><h1 style="margin:0px"><small>{{ page.tagline }}</small></h1>{% endif %}
 		{% else %}
   		<h1>{{ page.title }} {% if page.tagline %}</h1><h1 style="margin:0px"><small>{{ page.tagline }}</small></h1>{% endif %}
         {% endif %}
           </div>
           </div>
           </div>
+		{% if page.image != null %}
+	      <div class="span12 visible-phone visible-tablet" style="height:256px;">
+		  <div style="display:table;height:256px;">
+		  <div style="display:table-cell;vertical-align:middle;">
+	        {% if site.prettycategory[page.group] != null %}
+	        <h1><span style="color:#bbb">{{site.prettycategory[page.group]}}:</span> {{ page.title }} {% if page.tagline %}</h1><h1 style="margin:0px"><small>{{ page.tagline }}</small></h1>{% endif %}
+			{% else %}
+	  		<h1>{{ page.title }} {% if page.tagline %}</h1><h1 style="margin:0px"><small>{{ page.tagline }}</small></h1>{% endif %}
+	        {% endif %}
+          </div>
+          </div>
+          </div>
+        {% endif %}
         </div>
   	</div>
 </div>
@@ -38,6 +51,7 @@
           {% include JB/links_list %}
         </ul>
       </section>
+      </br>
     {% endif %}
     {% if page.category %}
     <section>
@@ -48,10 +62,11 @@
         {% include JB/pages_list %}
       </ul>
     </section>
+    </br>
     {% endif %}
     {% unless site.tags == empty %}
       <section>
-        <h3>Tags</h3>
+        <h3>All Tags</h3>
         <ul class="tag_box">
           {% assign tags_list = site.tags %}
           {% include JB/tags_list %}

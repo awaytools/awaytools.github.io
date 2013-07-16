@@ -3,39 +3,33 @@ title : About
 layout: page
 header : Post Archive
 group: AWDFormat
-prettygroup: AWD Format
 category : AWDFormat
 permalink: "about/"
 ---
 {% include JB/setup %}
 
-## What is Away Builder?
+## What is AWD?
 
-Away Builder is a visual editing tool that takes the pain out of asset creation in Away3D. What used to take a lot of coding by hand is now accomplished in just a few clicks, using either the downloadable [AIR application](https://github.com/awaytools/AwayBuilder/blob/master/awaybuilder-desktop/bin-release/AwayBuilderApplication.air?raw=true) or online [web version](/awaybuilder/live_tool/) of the tool. Away Builder is built on top of the [Away3D framework](http://www.away3d.com), and leverages Stage3D - the hardware acceleration technology built into Adobe's Flash & AIR runtimes.
+AWD is a compact binary format for the storing and retrieval of 3D data. It is designed for use in websites and installable mobile and desktop applications, and is built primarily for use with the [Away3D framework](http://www.away3d.com). For an up to date document of the specification, you can download the [AWD Format Specification](https://github.com/awaytools/awd-sdk/blob/master/docs/AWD_format_specification2_1_Alpha.pdf?raw=true) pdf on GitHub
 
-## What does Away Builder Do?
+## Why have we created the AWD Format?
 
-Away Builder allows the import and optimisation / augmentation of 3D assets. The current version of Away Builder allows the import of a variety of different asset formats including OBJ, 3DS, MD2, MD5 and Collada, as well as jpg and png image formats for use in textures. 
+AWD is a format designed for online use, be it through the browser, mobile or desktop application. It defines and delivers on the following requirements for a general purpose 3D format for the web:
 
-Once imported, Away Builder allows the editing of your assets via Away3D-based controls, and can adjust parameters such as scene position, material setup, shading, lighting and animation settings.
+- A compact binary file that is optimised for OTA deployment
+- A lightweight block format that is fast to parse
+- A tag system that is easy to extend with user-generated attributes
+- An internal structure that allows the streaming of larger file and scenes
+- A free and open source license, available for anyone to implement in their workflow
 
-You can think of Away Builder as the missing link between designer and developer on a 3D project. In order for the designer to hand off assets to the developer, they want some assurances as to what the final results will look like in Away3D. Away Builder allows them to preview their creations, but more than that, tailor the visual settings in the engine to their exact requirements without any need for coding. The developer then receives a single file that will recreate the designers intent upon loading, while still allowing easy integration of their assets within an application framework.
+As well as the above, the AWD format has many data structures that transfer seamlessly with the data structures in Away3D-based 3D scenes, offering many options for asset creation when dealing with Away3D-based projects.
 
-## Away Builder is Not Modeling Software
+## AWD is not an Interchange format
 
-**Away Builder is a 3D workflow tool.**
+**AWD is a publishing format for 3D files.**
 
-Away Builder does not come with any modeling capabilities and you should leave this ability to your professional 3D editors / designers.
-What Away Builder does offer is a visual solution to the problem of asset preparation for Away3D projects.
-
-## Initial Setup
-
-Away Builder is bundled with the Adobe Gaming SDK as a desktop application, with the latest binary always available from our [github repository](https://github.com/awaytools/AwayBuilder). It is also available as an [in-browser demonstration](/awaybuilder/AwayBuilderApplication.html) that you can instantly access and try out before downloading and installing.
-
-## The AWD Format
-
-Away Builder uses the AWD format as an output file format for use in Away3D. This is another open source project managed by [The Away Foundation](http://www.theawayfoundation.org), and the current format specification can be view via the latest [AWD specification doc](https://github.com/awaytools/awd-sdk/blob/master/docs/AWD_format_specification2_1_Alpha.pdf?raw=true). You can find more info on the [AWD About Pages](/awdformat/about)
+AWD is not designed to be multi-purpose or multi-compatible. AWD is built to provide a standard for scene data in Away3D projects. Rather than looking to replace existing interchange formats like Collada and FBX, AWD is intended as a container for assets in a live application. The former can still be used for the majority of production work, but it is in the process of publishing that we see AWD being used to its greatest potential. Our focus with AWD is therefore around the tools and extensions that allow seamless conversion between production assets and published assets, and it is here that we look to supporting resources in the Away Tools collection such as [Away Builder](/awaybuilder) and [Away Extensions](/awayextensions)
 
 ## Source Code
 
-As well as the tool being freely available for use in both desktop and online form, we also supply the source code for you to hack about with, augment for your own company needs, contribute back to the project or just have a nose around. We use the [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0) which grants the recipient freedom to use the code for pretty much whatever purpose they require, without fear of restriction. Away Builder is built using [Apache Flex](http://flex.apache.org/), [Robotlegs](http://www.robotlegs.org/) and of course, [Away3D](http://www.away3d.com). The code can be downloaded from our [Github Repository](https://github.com/awaytools/AwayBuilder), where you will also find instructions for setting up a local build of the project.
+The AWD SDK consists of a set of AWD parsers and serialisers for use in your own tools and workflows, all of which use the [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0) for distribution and carry no restrictions on use. The latest sources are always available from our [Github repository](https://github.com/awaytools/awd-sdk), and some examples of SDK utilisation can be seen in the extensions and plugins under development in our own [Away Extensions](/awayextensions) libraries.

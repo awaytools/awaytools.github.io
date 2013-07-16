@@ -19,12 +19,20 @@ author :
   twitter : awaytools
   facebook : awaytools
 
+# Pretty names for page categories
+#
+
+prettycategory : 
+  Home : Home
+  AwayBuilder : Away Builder
+  AWDFormat : AWD Format
+  AwayExtensions : Away Extensions
 
 # Links defined for pages
 # Appear in in the right-side nav at teh top
 #
 links : 
-    Home :
+    AwayTools :
       - name : GitHub
         url : https://github.com/awaytools
         zocial : github
@@ -42,16 +50,21 @@ links :
         url : https://github.com/awaytools/AwayBuilder/archive/master.zip
         zocial : cloudapp
       - name : Binary Release
-        zocial : install
         url : https://github.com/awaytools/AwayBuilder/blob/master/awaybuilder-desktop/bin-release/AwayBuilderApplication.air?raw=true
+        zocial : install
       - name : Live Tool
         url : live-tool/
         zocial : livetool
     AWDFormat :
       - name : Github Pages
         url : https://github.com/awaytools/awd-sdk
+        zocial : github
       - name : Source Files
         url : https://github.com/awaytools/awd-sdk/archive/master.zip
+        zocial : cloudapp
+      - name : Specification
+        url : https://github.com/awaytools/awd-sdk/blob/master/docs/AWD_format_specification2_1_Alpha.pdf?raw=true
+        zocial : print
   
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 

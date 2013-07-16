@@ -9,7 +9,7 @@ image : awaybuilder-released-1-0.jpg
 
 This first production version of Away Builder is now available! This is the first release of many so if you experience any issues with operation then please log them with our [GitHub Issues Tracker](https://github.com/awaytools/AwayBuilder/issues). Feature requests are also welcome!
 
-## Aquiring
+## Download
 
 You can grab a download of the AIR binary in one the following ways:
 

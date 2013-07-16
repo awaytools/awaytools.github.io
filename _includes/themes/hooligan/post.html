@@ -38,11 +38,23 @@
     <section>
       <h3>Category</h3>
       <span class="category">
-        {{ page.category }}
+        {{ site.prettycategory[page.category] }}
       </span>
     </section>
     </br>
-	<section>
+    {% endif %}     
+	{% if site.links[page.category] %}
+      <section>
+        <h3>Links</h3>
+        <ul class="link_box">
+          {% assign links_list = site.links[page.category] %}
+          {% include JB/links_list %}
+        </ul>
+      </section>
+      </br>
+    {% endif %}
+    {% if page.category %}
+    <section>
       <h3>Pages</h3>
       <ul class="tag_box">
         {% assign pages_list = site.pages %}
@@ -51,15 +63,15 @@
       </ul>
     </section>
     </br>
-    {% endif %}     
-    {% unless page.tags == empty %}
-    <section>
-      <h3>Tags</h3>
-      <ul class="tag_box">
-        {% assign tags_list = page.tags %}
-        {% include JB/tags_list %}
-      </ul>
-    </section>
-    {% endunless %}         
+    {% endif %}
+    {% unless site.tags == empty %}
+      <section>
+        <h3>All Tags</h3>
+        <ul class="tag_box">
+          {% assign tags_list = site.tags %}
+          {% include JB/tags_list %}
+        </ul>
+      </section>
+    {% endunless %}        
   </div>
 </div>

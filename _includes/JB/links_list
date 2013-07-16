@@ -28,7 +28,7 @@ Usage:
       {% if node.name == "Live Tool" %}
         <li><a href="{{node.url}}" class="zocial {{node.zocial}}">{{node.name}}&nbsp;&nbsp;</a></li>
       {% else %}
-        <li><a href="{{node.url}}"><span class="zocial icon {{node.zocial}}">{{node.name}}</span>{{node.name}}</a></li>
+        <li><a href="{{node.url}}"><span class="zocial icon {{node.zocial}} hidden-phone hidden-tablet">{{node.name}}</span>{{node.name}}</a></li>
       {% endif %}
     {% endif %}
   {% endfor %}

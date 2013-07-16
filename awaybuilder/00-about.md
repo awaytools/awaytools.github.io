@@ -3,7 +3,6 @@ title : About
 layout: page
 header : Post Archive
 group: AwayBuilder
-prettygroup: Away Builder
 category : AwayBuilder
 permalink: "about/"
 ---
