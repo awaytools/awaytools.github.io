@@ -53,7 +53,7 @@ links :
         url : https://github.com/awaytools/AwayBuilder/blob/master/awaybuilder-desktop/bin-release/AwayBuilderApplication.air?raw=true
         zocial : install
       - name : Live Tool
-        url : live-tool/
+        url : /awaybuilder/live-tool/
         zocial : livetool
     AWDFormat :
       - name : Github Pages
