@@ -24,7 +24,7 @@ If you're the impatient type, you can simple click the live tool link in the rig
 - There is no safety prompt to save your work if you accidentally close the window
 - Files import one at a time, and there is no facility for local dependencies to be automatically loaded
 - There is no option to save a file with external textures
-_ Mousewheel interaction will be disabled on some browsers (we are looking at fixing this soon)
+- Mousewheel interaction will be disabled on some browsers (we are looking at fixing this soon)
 
 ## Demo
 
