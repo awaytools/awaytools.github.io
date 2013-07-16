@@ -10,7 +10,7 @@ permalink: "about/"
 
 ## What is AWD?
 
-AWD is a compact binary format for the storing and retrieval of 3D data. It is designed for use in websites and installable mobile and desktop applications, and is built primarily for use with the [Away3D framework](http://www.away3d.com). For an up to date document of the specification, you can download the [AWD Format Specification](https://github.com/awaytools/awd-sdk/blob/master/docs/AWD_format_specification2_1_Alpha.pdf?raw=true) pdf on GitHub
+AWD is a compact binary format for the storing and retrieval of 3D data. It is primarily designed for use in websites and installable mobile and desktop applications, and is optimised for use with the [Away3D framework](http://www.away3d.com). For an up-to-date document of the specification, you can download the [AWD Format Specification](https://github.com/awaytools/awd-sdk/blob/master/docs/AWD_format_specification2_1_Alpha.pdf?raw=true) PDF on GitHub.
 
 ## Why have we created the AWD Format?
 
@@ -32,4 +32,4 @@ AWD is not designed to be multi-purpose or multi-compatible. AWD is built to pro
 
 ## Source Code
 
-The AWD SDK consists of a set of AWD parsers and serialisers for use in your own tools and workflows, all of which use the [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0) for distribution and carry no restrictions on use. The latest sources are always available from our [Github repository](https://github.com/awaytools/awd-sdk), and some examples of SDK utilisation can be seen in the extensions and plugins under development in our own [Away Extensions](/awayextensions) libraries.
+The AWD SDK consists of a set of AWD parsers and serialisers for use in your own tools and workflows, all of which use the [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0) for distribution and carry no restrictions on use. The latest sources are always available from our [GitHub repository](https://github.com/awaytools/awd-sdk), and some examples of SDK utilisation can be seen in the extensions and plugins under development in our own [Away Extensions](/awayextensions) libraries.
