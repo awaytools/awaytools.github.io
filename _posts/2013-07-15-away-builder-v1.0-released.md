@@ -32,7 +32,7 @@ If you're the impatient type, you can simple click the live tool link in the rig
 
 As a first example for those of you keen on getting stuck in, we thought we'd give you something familiar. The Crytek Sponza model featured back in the Away3D 4.1 Alpha release looked fantastic in Multi-pass material glory, but anyone looking at the code could see all that loveliness came at a fairly high coding preparation cost.
 
-The demo above is fairly easily launched once you have Away Builder running. Simply download the file [here](assets/awd/sponza_lights_textures.awd). and double click to open in Away Builder. You can also try it in an Away3D project of your own by loading the usual way - this file comes complete with all textures and lighting conditions from the original, but you can of course edit them in the tool to whatever you feel like.
+The demo above is fairly easily launched once you have Away Builder running. Simply download the file [here](/assets/awd/sponza_lights_textures.awd). and double click to open in Away Builder. You can also try it in an Away3D project of your own by loading the usual way - this file comes complete with all textures and lighting conditions from the original, but you can of course edit them in the tool to whatever you feel like.
 
 ## Further Reading
 
