@@ -13,7 +13,7 @@ This first production version of Away Builder is now available! This is the firs
 
 You can grab a download of the AIR binary in one the following ways:
 
-- On GitHhub by going to [AwayBuilder releases](https://github.com/awaytools/AwayBuilder/releases).
+- On GitHub by going to [AwayBuilder releases](https://github.com/awaytools/AwayBuilder/releases).
 - On the Away3D website by going to [https://www.away3d.com/awaybuilder](https://www.away3d.com/awaybuilder).
 - By clicking on the "Binary Release" button in the right-hand nav.
 
