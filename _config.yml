@@ -69,17 +69,17 @@ links :
         - name : AWD SDK
           url : https://github.com/awaytools/awd-sdk/archive/master.zip
           zocial : cloudapp
-        - name : 3DS Max Tools
-          url : https://github.com/awaytools/awd-tools-3dsmax/archive/master.zip
+        - name : 3DS Max
+          url : https://github.com/awaytools/AwayExtensions-3DSMax/archive/master.zip
           zocial : cloudapp
-        - name : Blender Tools
-          url : https://github.com/awaytools/awd-tools-blender/archive/master.zip
+        - name : Blender
+          url : https://github.com/awaytools/AwayExtensions-Blender/archive/master.zip
           zocial : cloudapp
-        - name : C4D Tools
-          url : https://github.com/awaytools/awd-tools-c4d/archive/master.zip
+        - name : C4D
+          url : https://github.com/awaytools/AwayExtensions-C4D/archive/master.zip
           zocial : cloudapp
-        - name : Maya Tools
-          url : https://github.com/awaytools/awd-tools-maya/archive/master.zip
+        - name : Maya
+          url : https://github.com/awaytools/AwayExtensions-Maya/archive/master.zip
           zocial : cloudapp
 
 

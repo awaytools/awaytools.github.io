@@ -1,16 +1,16 @@
 ---
 layout: post
-title : Introducing AWD-Tools-C4D
+title : Introducing Away Extensions C4D
 category : AwayExtensions
 summary: "The Cinema4D extensions repository is the first AwayExtensions library to be upgraded to support the new features of AWD 2.1"
-tags : [News, Release]
-image : introducing-awdtoolsc4d.jpg
+tags : [News, Release, C4D]
+image : introducing-awayextensionsc4d.jpg
 ---
 {% include JB/setup %}
 
 A new set of extensions that compliment a Cinema4D -> Away3D workflow have been uploaded to the awaytools Github. This is the first AwayExtensions library to be upgraded to support the <a href="/awdformat/introducing-awd-2.1">new features of AWD 2.1</a>
 
-Development is ongoing, but we encourage any Cinema4D users to try things out as the included tools can already be used to export a C4D-scene into an AWD 2.1 file that includes lights, materials and animations. The source is written in python and can be downloaded from the right-hand link or browsed by going to <a href="https://github.com/awaytools/awd-tools-c4d">https://github.com/awaytools/awd-tools-c4d</a>
+Development is ongoing, but we encourage any Cinema4D users to try things out as the included tools can already be used to export a C4D-scene into an AWD 2.1 file that includes lights, materials and animations. The source is written in python and can be downloaded from the right-hand link or browsed by going to <a href="https://github.com/awaytools/awayextensions-c4d">https://github.com/awaytools/awayextensions-c4d</a>
 
 The following is an overview of the current AWD support in Cinema4D.
 
