@@ -66,9 +66,6 @@ links :
         url : https://github.com/awaytools/awd-sdk/blob/master/docs/AWD_format_specification2_1_Alpha.pdf?raw=true
         zocial : print
     AwayExtensions :
-        - name : AWD SDK
-          url : https://github.com/awaytools/awd-sdk/archive/master.zip
-          zocial : cloudapp
         - name : 3DS Max
           url : https://github.com/awaytools/AwayExtensions-3DSMax/archive/master.zip
           zocial : cloudapp
