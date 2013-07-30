@@ -3,7 +3,7 @@ layout: post
 title : Introducing AWD-Tools-C4D
 category : AwayExtensions
 summary: "The Cinema4D extensions repository is the first AwayExtensions library to be upgraded to support the new features of AWD 2.1"
-tags : [News, Releases]
+tags : [News, Release]
 image : introducing-awdtoolsc4d.jpg
 ---
 {% include JB/setup %}

@@ -3,7 +3,7 @@ layout: post
 title : Introducing AWD 2.1
 category : AWDFormat
 summary: "The AWD Format has gone through a major upgrade in its 2.1 version. In this post we give a brief outline of the changes already made, and the plans for further additions"
-tags : [News, Releases]
+tags : [News, Release]
 image : introducing-awd-2.1.jpg
 ---
 {% include JB/setup %}

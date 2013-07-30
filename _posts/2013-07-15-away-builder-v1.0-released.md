@@ -2,7 +2,7 @@
 layout: post
 category : AwayBuilder
 summary: "The release of Away Builder marks the start of a brand new set of open source resources from The Away Foundation"
-tags : [News, Releases]
+tags : [News, Release]
 image : awaybuilder-released-1-0.jpg
 ---
 {% include JB/setup %}
