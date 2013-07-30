@@ -88,6 +88,10 @@ hr {
   height: 1px;
 }
 
+li p {
+  padding-bottom: 0 !important;
+}
+
 /* Layout */
 /* line 81, ../_sass/_base.scss */
 .navbar {

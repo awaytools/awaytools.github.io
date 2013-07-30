@@ -1,256 +1,199 @@
 ---
 layout: post
-title : Introducing to AWD-Tools-C4D
+title : Introducing AWD-Tools-C4D
 category : AwayExtensions
-summary: "The AWD-Tools-C4D is the first Away Extension, that is supporting some of the new features of AWD2.1"
+summary: "The Cinema4D extensions repository is the first AwayExtensions library to be upgraded to support the new features of AWD 2.1"
 tags : [News, Releases]
 image : introducing-awdtoolsc4d.jpg
 ---
 {% include JB/setup %}
 
-The AWD-Tools-C4D is the first Away Extension, that is supporting some of the new features of AWD2.1.
+A new set of extensions that compliment a Cinema4D -> Away3D workflow have been uploaded to the awaytools Github. This is the first AwayExtensions library to be upgraded to support the <a href="/awdformat/introducing-awd-2.1">new features of AWD 2.1</a>
 
-While it is still in development, it can already be used to export a C4D-scene into the AWD2.1-Format, including light-setups and animations.
+Development is ongoing, but we encourage any Cinema4D users to try things out as the included tools can already be used to export a C4D-scene into an AWD 2.1 file that includes lights, materials and animations. The source is written in python and can be downloaded from the right-hand link or browsed by going to <a href="https://github.com/awaytools/awd-tools-c4d">https://github.com/awaytools/awd-tools-c4d</a>
 
+The following is an overview of the current AWD support in Cinema4D.
 
-## Content
+# Contents
 
-<nav><ul>
-<li><a href="#main1">1. General</a></li>
-<li><a href="#main2">2. Supported Objects</a></li>
-<li><a href="#main2sub1">2.1 Null-Objects</a></li>
-<li><a href="#main2sub2">2.2 Polygon-Objects</a></li>
-<li><a href="#main2sub3">2.3 Primitives</a></li>
-<li><a href="#main2sub4">2.4 Instance-Objects</a></li>
-<li><a href="#main2sub5">2.5 Joint-Objects</a></li>
-<li><a href="#main2sub6">2.6 Light-Objects</a></li>
-<li><a href="#main2sub7">2.7 LightPicker</a></li>
-<li><a href="#main2sub8">2.8 Camera-Objects</a></li>
-<li><a href="#main3">3. AWDObjectSettings Tag</a></li>
-<li><a href="#main4">4. Materials</a></li>
-<li><a href="#main4sub1">	4.1 Texture-Tags</a></li>
-<li><a href="#main5">5. Textures</a></li>
-<li><a href="#main6">6. Animations</a></li>
-</ul></nav>
+- [1. General](#main1)
+- [2. Supported Objects](#main2)
+  - [2.1 Null-Objects](#main2sub1)
+  - [2.2 Polygon-Objects](#main2sub2)
+  - [2.3 Primitives](#main2sub3)
+  - [2.4 Instance-Objects](#main2sub4)
+  - [2.5 Joint-Objects](#main2sub5)
+  - [2.6 Light-Objects](#main2sub6)
+  - [2.7 LightPicker](#main2sub7)
+  - [2.8 Camera-Objects](#main2sub8)
+- [3. AWDObjectSettings Tag](#main3)
+- [4. Materials](#main4)
+  - [4.1 Texture-Tags](#main4sub1)
+- [5. Textures](#main5)
+- [6. Animations](#main6)
 
 
 <section id="main1l"/>
-## 1. General
+# 1. General
 
+Before using the AWD exporter, it is advised that you save your C4D-scene. You do not need to save every scene-change, but the scene must have a valid name and a document-path, and must not be a newly created scene, that has never been saved.
 
-The C4D-scene needs to have been saved before exporting. 
-(You do not need to save every scene-change, but the scene must have a valid name and a document-path, and must not be a newly created scene, that has never been saved)
+To ensure the exporter will find the filepaths to all textures, it is recommended to perform a "Save Project with Assets" before exporting a scene. this will let you choose a name and a location and will save the project to a new folder, created at the chosen location with the given name. All textures used in the project will be saved to a folder called "tex" next to the saved C4D-project, making them easy to retrieve. For easy access (and as a reminder), a "Save Project with Assets" shortcut has been included into the exporter GUI.
 
-To make shure the plugin will find the pathes to all textures, it is recommented to perform a "Save Project with Assets" before exporting a scene.
-("Save Project with Assets" will let you choose a name and a location and will save the project to a new folder, created at the choosen location, named by the given name. All textures, used in the project will be saved to a folder called "tex" next to the saved C4D-project. 
-This is a standart C4D-function. For easy access (and as a reminder), the "Save Project with Assets" has been included into the Plugin-Gui.
-
-The C4D layer-system enables to prevent groups of objects from beeing displayed in the scenegraph at all. The exporter will export all objects found inside a C4D-project, regardless of its layer.
-To prevent errors on export, its is best not to use the C4D layer-system at all.
+The C4D layering system is frequently used in a project to prevent groups of objects from being displayed in the main view. This arrangement is ignored by the exporter - all objects found inside a C4D-project, regardless of layer, will be exported in the same way. To prevent unexpected results, it is currently recommended to avoid using the C4D layering system altogether.
 
 
 <section id="main2"/>
+# 2. Supported Objects
 
-## 2. Supported Objects
+Unsupported objects will be ignored by the exporter. If an unsupported object is parent of a supported object, it will be exported as a Null object (e.g. an Away3D ObjectContainer3D object)
 
-
-Unsupported objects will not be exported.
-If a unsupported object is parent of a supported object, it will be exported as a Null-Object (e.g. a Away3d ObjectContainer3d)
-
-Most unsupported object can be converted into polygon-objects in C4D very easy. 
-(select a primitive and press "c") 
-(right click on hypernurbs and select "current State to object")
+Most unsupported objects can be easily converted into polygon-objects in C4D (eg. right click on Hypernurbs and select "Current state to object")
 
 
-
-<section id="main2sub1"/>
-	
-### 2.1 Null-Objects	
+<section id="main2sub1"/>	
+## 2.1 Null Objects	
 		
-Null Object are exported as ObjectContainer3D.
-A NullObject has a name, a transform-matrix and a list of children.
-All other scene-objects inherite these three properties.
+Null objects are exported as ObjectContainer3Ds. A null object has a name, a 3D transform matrix and a list of children. All other scene-objects inherit these three properties.
 
 <section id="main2sub2"/>
+## 2.2 Polygon Objects
 
-### 2.2 Polygon-Objects
+All polygon objects will be triangulated into Away3D Geometry objects on export.
 
-All polygon-objects will be triangulated on export.
+The point count of a polygon object shown in C4D (Object information), will in most cases not be the same as the point count of the generated Away3D geometry.
+ This is due to C4D storing vertices with the potential for shared UV values, normal-values etc. for different points. In AWD, the geometry data is organised into unique  vertices that do not share data with any other vertices. This is done for fast parsing, but if you're geometry has a lot of shared UV values (seams) or un-merged normal values (phong breaks) you may want to consider optimising the data before exporting.
 
-The point-count of a polygon-object shown in C4D (object-Information), will in most cases not be the point-count of the generated Away3d-geometry.
+In C4D, one polygon can have multiple materials assigned to it. The exported Away3D geometry will have one SubGeometry for each material that is used in the polygon-object, however only one material per polygon will be exported. A SubGeometry has a restricted size based on the maximum vertex count allowed for a single draw call in Away3D (65536) - therefore the exporter might need to create several SubGeometries for a single polygon.
 
-This is because, in C4D you can have multiple uv-values and multiple normal-vectors for the same point. 
-In Away3d a geometry needs to have multiple points (vertices) if you want two have multiple uv-values (uv-seams) or multiple normal-vectors (phong breaks) for the same point-position.
-		
-In C4D, the phong-tag is used, to define the look of the mesh, regarding phong and phong-breaks.
-The exporter will calculate the extra points needed to display the mesh in Away3d.
+Polygon-objects can be set to display object colors instead of the assigned materials ("object-color-mode"). The exporter will export an Away3D ColorMaterial object for each object color used.
 
-Since each UV-seam and Phong-Breaks results in duplicated vertices for the same position, you want to minimize them as much as possible (for smaller fileSize).
-Spezially when working with animated meshes,  point-count really matters.
+In C4D, objects can inheritate materials assigned to their parent objects. The exporter will resolve this material assignment, so that every mesh is exported with the correct materials assigned directly.
 
-In C4D, one polygon can have multiple materials assigned. Only one material per polygon will be exported.
-The exported geometry will have one subgeometry for each material that is used in the polygon-object.
-Since a subgeometry is restricted in its size (and a polygon-object is not) the exporter might need to create several subgeometries for the same material.
-
-Polygon-objects can be set to display object-colors instead of the assigned materials ("object-color-mode"). The exporter will export a away3d-colormaterial for each object-color that is used.
-
-In C4D, objects can inheritate materials assigned to their parent objects.
-The exporter will resolve this material-assignment, so that every mesh is exported with the correct materials assigned directly.
-
-Polygon-objects can be animated. <a href="#main6">Read more information in the animation-chapter.</a>
+Polygon objects can be animated. [Read more information in the animation chapter.](#main6)
 
 
 <section id="main2sub3"/>
+## 2.3 Primitives
 
-### 2.3 Primitives
+AWD 2.1 can store primitive geometry using the primitive's parameters rather than the raw vertex data. The following C4D primitives are supported for export:
 
+- Plane
+- Sphere
+- Cube
+- Cylinder
+- Cone
+- Capsule
+- Torus
 
-This C4D-primitves are supported for export:
-
-* Plane
-* Sphere
-* Cube
-* Cylinder
-* Cone
-* Capsule
-* Torus
-
-The up-vector for all exported primitives will be the y-axis (yup = true).
-
+The up-vector for all exported primitives will default to the y-axis (yup = true).
 
 
 <section id="main2sub4"/>
-	
-### 2.4 Instance-Objects
+## 2.4 Instance Objects
 
+To be included in an AWD export, a C4D instance object must reference either a polygon object or one of the supported C4D primitves.
 
-To be valid for export, a C4D-instance-object needs to reference a polygon-object, or one of the supported C4D-primitves. 
-
-If the instance-object is set to be a "render-instance", it will use the same "object-color-mode" as the referenced object. Otherwise it will use its own "object-color-mode".
-		
-If the referenced polygon-object has a material assigned directly, the instance-object will use the same material.
-
-If the referenced polygon-object has no material assigned directly, the instance-object can have  its own material applied (directly or by inheritate).
+If the instance object is defined as a render instance, it will use the same object color mode as the referenced object. Otherwise it will use its own object color mode. If the referenced polygon object has a material assigned directly, the instance object will use the same material. If the referenced polygon-object has no material assigned directly, the instance-object can have  its own material applied (directly or by inheritance).
 
 
 <section id="main2sub5"/>
-### 2.5 Joint-Objects	
+## 2.5 Joint-Objects	
 
-To  be exported, a Joint-Object needs to be part of a  AWDSkeleton / AWDSkeletonAnimation. 
-Read more information in the animation-chapter
+To  be included in an AWD export, a Joint object needs to be part of an AWDSkeleton / AWDSkeletonAnimation. 
+Read more information in the [animation chapter](#main6)
 
 
 <section id="main2sub6"/>
-### 2.6 Light-Objects	
+## 2.6 Light-Objects	
 		
-Only two types of lights are supported for export.
-Point-lights will be exported as Away3d-pointlights, infinite-lights will be exported as C4d-directionallights.
+Only two types of lights are supported in the current AWD format, point lights and directional lights.
 
-Exportet light-properties:
+C4D Point lights will be exported as AwayD PointLight objects, infinite lights will be exported as Away3D DirectionalLight objects.
 
-* Position / Rotation (Direction) 
-* Color
-* Strength for ambient, specular and diffuse
+Export light properties:
 
-In Away3d a light-object has a different strength-value for ambient, specular and diffuse light.
-In c4d a light has only one strength value, but a checkbox to enable/disable specular, ambient or diffuse light.
+- Transform (position, rotation).
+- Color (RGB).
+- Intensity for ambient, specular and diffuse components.
 
-* A specular, ambient or diffuse that is disabled, will be exported as strength = 0.
+In Away3D, a light object has different intensity values for ambient, specular and diffuse components. This is not the case In C4D, so the values are determined by the single strength value of the light. A checkbox to enable/disable specular, ambient or diffuse light intensities controls the extra values in the output.
 
-* A specular, ambient or diffuse that is enabled , will be exported with the general-light-strength.
+- A specular, ambient or diffuse checkbox that is disabled will export the property with an intensity (level) of 0.
+- A specular, ambient or diffuse checkbox that is enabled will export the property with an intensity (level) of the general light strength.
 
 <section id="main2sub7"/>
-### 2.7 LightPicker
+## 2.7 LightPicker
 
-In C4D each light has a list of objects that can be used to add the light only to specific objects, or to prevent specific objects from being lit by this light.
-The exporter will create Away3D-StaticLightPickers so the lighting can be recreated in Away3d.
-Since the Away3D-StaticLightPicker is a property of the material, the exporter might need to clone some of the materials (and assign different LightPickers to the clones).
+In C4D, each light source has a list of objects that that define which objects are effected by the light. Away3D uses a separate grouping object known as a Light Picker that can be defined individually for each object or for a group of objects.
+
+The AWD exporter will create an Away3D StaticLightPicker for each light so the lighting setup is recreated in Away3D. Since the Away3D StaticLightPicker is a property of a material rather than an object, the exporter will automatically clone any material that requires different light treatment on different objects.
 
 
 <section id="main2sub8"/>
-### 2.8 Cameras
+## 2.8 Cameras
 
-Cameras will be exported. The only exported projection is "Perspective". All other projections will be exported as "Perspective".
+Cameras are exported by default. The only supported projection currently is "Perspective". All other projections will be automatically exported as "Perspective".
 
 
 <section id="main3"/>
-## 3. AWDObjectSettings Tag
+# 3. AWDObjectSettings Tag
 
 
-Generally its best to clean your C4D-Scene before export, so no unsupported/unnessessary Objects are exported.
-For some reasons, you might want to keep objects in your scene, that should not get exported.
-Apply a AWDObjectSettingsTag to objects, to keep them from getting exported.
- (Disable the "Export"-option. You can enable the "Apply to Childs"-option, to prevent all childs from getting exported too.)
-If you disable the "Export" and the "Apply to childs" and a supported child object is found in the scene, the object that should be excludet from export is exported as a ObjectContainer3d. 
+For best results, it is a good idea to clean your C4D scene before using the AWD exporter so no unsupported/unnecessary objects are included. In the cases where objects that are not intended for export are still required in the scene, an AWDObjectSettingsTag can be applied with the "Export" option set to false. This will cause the exporter to ignore them when exporting the scene.
+
+If your ignored objects contain a lot of children to be ignored, a quick way to strip them all is to enable the "Apply to Childs" option in an AWDObjectSettingsTag with "Export" set to false. Otherwise, any supported objects found in the children of an ignored object will still be exported, with the ignored object showing up in the exported scenegraph as an ObjectContainer3D.
 
 
 <section id="main4"/>
-## 4. Materials
+# 4. Materials
 
 
-Only the c4d-Standart Material is supported. 
+The AWD exporter currently supports a subset of the C4D standard material. 
 
-The c4d-Standart Material is made of a list of Channels. 
+In C4D, a standard material is made up of a list of channels. Currently supported channels include:
 
 You can expand this list, but a custom-channel will not be read by the exported.
 
 This channels will be exportet:
 
-* Color-Channel: 
-The Color will be exported. 
-If the Color-Shader is a BitmapShader  (Texture-File) the material will be exported as a texture-material, and the texture will be exported too.  
-All other Shader (like "Layer", "Fresnel", or "SubSurfaceScattering") are not supported.
+- **Color Channel:** If the shader slot of the color channel contains a bitmap shader with a texture file, the material will be exported as an Away3D TextureMaterial, with the texture stored as an Away3D BitmapTexture. Otherwise, the material is exported as an Away3D ColorMaterial using the color value of the channel.
 
-* Transparenzy-Channel :
-The strength of the transparenzy is exported as the alpha property of the material.
-No other settings of the transparenzy-Channel are exported.
+- **Transparency Channel:** The strength of the transparency is exported as the alpha property of the material. No other settings of the transparency channel are exported.
 
-* Normal-Channel :
-Only the normal-texture found in the shader-slot of the normal-channel is exported.
-No other settings of the normal-Channel are exported.
+- **Normal Channel:** Only the normal texture found in the shader slot of the normal channel is exported. No other settings of the normal channel are exported.
 
-* Diffuse Channel :
-Only the diffuse-texture found in the shader-slot of the diffuse-channel is exported (as specular-texture).
-No other settings of the normal-Channel are exported.
+- **Specular Channel:** Only the diffuse texture found in the shader slot of the specular channel is exported (as an Away3D SpecularTexture). No other settings of the specular channel are exported.
 
-In C4D most material-channels containing a shader-slot. This slot (or LinkBox) can contain other shaders than bitmap-shader (e.g. Noise, Fresnell, Layer, etc). Only Bitmap-shader is supported for export.
+In C4D, most material channels contain a shader slot. This slot (or LinkBox) can contain many different shader types (e.g. Noise, Fresnel, Layer, etc). Currently only the bitmap shader type is supported for export.
 
 
 <section id="main4sub1"/>
-### 4.1 Texture Tags:
+## 4.1 Texture Tags:
 	
-In C4D materials are assigned to objects by a texture tag.
+In C4D, materials are assigned to objects by a texture tag and it is possible to assign multiple materials to the same polygon object, However, in Away3D only one material can be applied to a SubGeometry. The exporter therefore only ever takes one material from each polygon to use in the AWD file. For polygon objects with multiple materials, this is determined as the first encountered texture tag that appears compatible for export.
 
-if you assign two materials to the same polygon, only the material that is assigned by the texturetag that appears most right in the object-manager is exported.
+The only supported projection mode for texture tags is "UV-Mapping". Repeat, offset-x, offset-y, scalex and scaley properties are exported by baking the result into the UV data of the file, and repeat-x or repeat-y properties currently have no effect.
 
-Only supported projection-Mode for texture-tags is "UV-Mapping"
-
-Repeat, offset-x, offset-y, scalex and scaley properties are exporter (gets baked into the UV-Data), but you cannot use repeat-x or repeat-y.
-
-If one texture-tag assigns a material to a object with repeat=true, and another texture-tag  assigns the same material to another object with repeat=false, 
-the exporter will have to duplicate the material, so the scene can be reconstructed in away3d.		 
+In the case when tag settings overlap (e.g. if one texture tag assigns a material to a object with repeat set to true, and another texture tag  assigns the same material to another object with repeat set to false) then the exporter will create a duplicate the material in order to assign the correct setings in Away3D.		 
 
 
 <section id="main5"/>
-## 5 Textures
+# 5 Textures
 	
-The exporter exports all textures found in the shader-slots of the supportet material-channels of a exported material.
+The AWD exporter includes all texture objects found in the shader slots of the supported material channels of an exported material. A textures must have a square size equal to a  power of two (4x4, 8x8, 16x16, 32x32 etc) in order to ensure texture are compatible with the renderers in Away3D. If a texture is not a power of 2 in dimensions, the exporter will prompt the user with an error dialog.
 
-A textures must have a size of power of two, or the user is prompted by a error-dialog.
-
-All textures will be stored as jpg-data, or,  if they contain a transparentzy channel, as png-data.
+All non-transparent textures will be stored as jpg data. Textures containing transparency will be exported as png data.
 	
-You can choose to embed all textures into the awd-file (the jpg/png data will be stored directly in the file), 
-or to use them as external files (the exporter saves jpg/png-files).
-
-
+In the exporter GUI you can choose to embed all textures into the awd file which will result in a single file with the jpg/png data stored inside. If this option is not enabled, the exporter will save separate jpg/png files in a local "textures" folder.
 
 
 <section id="main6"/>
-## 6 Animation
+# 6 Animation
 
-Two different kind of animation can be exported to Away3d.
-* SkeletonAnimation 
-* VertexAnimation
+Two different kind of animation can be exported to Away3D.
+
+- SkeletonAnimation 
+- VertexAnimation
 
 More information about animation is currently under construction, and will be uploaded soon.
