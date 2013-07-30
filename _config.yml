@@ -65,6 +65,24 @@ links :
       - name : Specification
         url : https://github.com/awaytools/awd-sdk/blob/master/docs/AWD_format_specification2_1_Alpha.pdf?raw=true
         zocial : print
+    AwayExtensions :
+        - name : AWD SDK
+          url : https://github.com/awaytools/awd-sdk/archive/master.zip
+          zocial : cloudapp
+        - name : 3DS Max Tools
+          url : https://github.com/awaytools/awd-tools-3dsmax/archive/master.zip
+          zocial : cloudapp
+        - name : Blender Tools
+          url : https://github.com/awaytools/awd-tools-blender/archive/master.zip
+          zocial : cloudapp
+        - name : C4D Tools
+          url : https://github.com/awaytools/awd-tools-c4d/archive/master.zip
+          zocial : cloudapp
+        - name : Maya Tools
+          url : https://github.com/awaytools/awd-tools-maya/archive/master.zip
+          zocial : cloudapp
+
+
   
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt 
