@@ -1,6 +1,6 @@
 ---
 layout: post
-title : Flash Online Conference #5
+title : Flash Online Conference 5
 category : AwayBuilder
 summary: "The Away Foundation present a session about Away Builder at the Flash Online Conference #5 on the 23rd August"
 tags : [News, Event]
