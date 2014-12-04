@@ -3,7 +3,7 @@ title : Live Tool
 layout: live_tool
 header : Post Archive
 category : AwayBuilder
-permalink: "live-tool/"
+permalink: "awaybuilder/live-tool/"
 ---
 {% include JB/setup %}
 
